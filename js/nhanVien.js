@@ -20,14 +20,14 @@ function nhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, luong, chucVu, gioLa
         }
     } 
     this.xepLoaiNhanVien = function() {
-        if(this.gioLam.value >= 192){
-            return this.loaiNhanVien = "Xuất sắc";
+        if(this.gioLam >= 192){
+            return this.xepLoai = "Xuất sắc";
         }else if (this.gioLam >= 176){
-            return this.loaiNhanVien = "Giỏi";
+            return this.xepLoai = "Giỏi";
         }else if (this.gioLam >= 160) {
-            return this.loaiNhanVien = "Khá";
+            return this.xepLoai = "Khá";
         }else{
-            return this.loaiNhanVien = "trung bình";
+            return this.xepLoai = "trung bình";
         }
     }
 }

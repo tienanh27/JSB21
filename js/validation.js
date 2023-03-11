@@ -33,16 +33,18 @@ function Validation() {
 
     this.checkName = function (valueInput, spanID, message) {
         var pattern = /^[a-z A-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/
+
         if (valueInput.match(pattern)) {
             document.getElementById(spanID).style.display = "none";
             document.getElementById(spanID).innerHTML = "";
             return true
         }
+
         document.getElementById(spanID).style.display = "block";
         document.getElementById(spanID).innerHTML = message;
         return false
     }
-    
+
     this.checkEmail = function (valueInput, spanID, message) {
         var patternString = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -51,7 +53,6 @@ function Validation() {
             document.getElementById(spanID).innerHTML = "";
             return true
         }
-
 
         document.getElementById(spanID).style.display = "block";
         document.getElementById(spanID).innerHTML = message;
@@ -73,21 +74,8 @@ function Validation() {
 
     }
 
-    this.checkSelect = function (selectID, spanID, message) {
-        var indexOption = document.getElementById(selectID).selectedIndex;
-        if (indexOption !== 0) {
-            document.getElementById(spanID).style.display = "none";
-            document.getElementById(spanID).innerHTML = "";
-            return true
-        }
-        document.getElementById(spanID).style.display = "block";
-        document.getElementById(spanID).innerHTML = message;
-        return false
-
-    }
-    
     this.checkLuong = function (valueInput, spanID, message) {
-        var pattern = /^\d+/;
+        var pattern = /^[0-9]+$/;
         if (valueInput.match(pattern) && valueInput > 0) {
             document.getElementById(spanID).style.display = "none";
             document.getElementById(spanID).innerHTML = "";
@@ -101,8 +89,22 @@ function Validation() {
 
     }
 
+    this.checkSelect = function (selectID, spanID, message) {
+        var indexOption = document.getElementById(selectID).selectedIndex;
+        if (indexOption !== 0) {
+            document.getElementById(spanID).style.display = "none";
+            document.getElementById(spanID).innerHTML = "";
+            return true
+        }
+        
+        document.getElementById(spanID).style.display = "block";
+        document.getElementById(spanID).innerHTML = message;
+        return false
+
+    }
+
     this.checkgioLam = function (valueInput, spanID, message) {
-        var pattern = /^\d+/;
+        var pattern = /^[0-9]+$/;
         if (valueInput.match(pattern) && valueInput > 0) {
             document.getElementById(spanID).style.display = "none";
             document.getElementById(spanID).innerHTML = "";

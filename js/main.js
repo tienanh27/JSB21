@@ -1,5 +1,5 @@
 const dsnv = new DSnhanvien();
-const validation = new alidation();
+const validation = new Validation();
 
 function getELE(id) {
     return document.getElementById(id);
